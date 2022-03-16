@@ -11,6 +11,9 @@ import { UserDetailComponent } from './features/user-detail/user-detail.componen
 import { FormsModule } from '@angular/forms';
 import { VendorListComponent } from './features/vendor-list/vendor-list.component';
 import { VendorDetailComponent } from './features/vendor-detail/vendor-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductListComponent } from './features/product-list/product-list.component';
+
 
 @NgModule({
   declarations: [
@@ -19,14 +22,17 @@ import { VendorDetailComponent } from './features/vendor-detail/vendor-detail.co
     UserListComponent,
     UserDetailComponent,
     VendorListComponent,
-    VendorDetailComponent
+    VendorDetailComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

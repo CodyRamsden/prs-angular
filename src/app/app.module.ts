@@ -13,6 +13,7 @@ import { VendorListComponent } from './features/vendor-list/vendor-list.componen
 import { VendorDetailComponent } from './features/vendor-detail/vendor-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './features/product-list/product-list.component';
+import { ProductDetailComponent } from './features/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ProductListComponent } from './features/product-list/product-list.compo
     UserDetailComponent,
     VendorListComponent,
     VendorDetailComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

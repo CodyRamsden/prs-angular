@@ -3,32 +3,32 @@ import { identifierModuleUrl } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Vendor } from '../models/vendor.model';
+import { Product } from '../models/product.model';
 
 
 
 //configure base url
-const vendorRoute = "/vendor"
+const productRoute = "/products"
 
 @Injectable({
   providedIn: 'root'
 })
-export class VendorService {
+export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  url = environment.apiBaseUrl + vendorRoute
+  url = environment.apiBaseUrl + productRoute
 
-  //get all vendors
+  //get all products
   //http://localhost:8080/users/
-  getAll() : Observable<Vendor []> {
+  getAll() : Observable<Product []> {
     let requestUrl = this.url + '/';
-    return this.http.get<Vendor[]>(`${this.url}/`)
+    return this.http.get<Product[]>(`${this.url}/`)
   }
-  //get vendor by id
+  //get product by id
   //http://localhost:8080/users/{id}
-  getById (id: number) : Observable<Vendor[]> {
+  getById (id: number) : Observable<Product[]> {
   let requestUrl = this.url + '/' + id
-  return this.http.get<Vendor[]>(requestUrl)
+  return this.http.get<Product[]>(requestUrl)
   }
 }

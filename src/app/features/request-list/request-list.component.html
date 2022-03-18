@@ -1,0 +1,30 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+    <th scope="col"></th>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Justification</th>
+    <th scope="col">Date Needed</th>
+    <th scope="col">Delivery Mode</th>
+    <th scope="col">Status</th>
+    <th scope="col">Total</th>
+    <th scope="col">Submitted Date</th>
+    <th scope="col">Reason For Rejection</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let request of requests; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{request.user.lastName}}, {{request.user.firstName}}</td>
+      <td>{{request.description}}</td>
+      <td>{{request.justification}}</td>
+      <td>{{request.dateNeeded}}</td>
+      <td>{{request.deliveryMode}}</td>
+      <td>{{request.status}}</td>
+      <td>{{request.total}}</td>
+      <td>{{request.submittedDate}}</td>
+      <td>{{request.reasonForRejection}}</td>
+    </tr>
+  </tbody>
+</table>

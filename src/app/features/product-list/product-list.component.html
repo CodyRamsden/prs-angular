@@ -8,7 +8,7 @@
     <th scope="col">Price</th>
     <th scope="col">Unit</th>
     <th scope="col">Photo Path</th>
-
+    <th scope="col">Actions</th>
   </tr>
   </thead>
   <tbody>
@@ -20,6 +20,7 @@
       <td>{{product.price}}</td>
       <td>{{product.unit}}</td>
       <td>{{product.photoPath}}</td>
+      <td><a routerLink="/product/detail/{{ product.id }}">Details</a></td>
     </tr>
   </tbody>
 </table>

@@ -14,6 +14,8 @@ import { VendorDetailComponent } from './features/vendor-detail/vendor-detail.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './features/product-list/product-list.component';
 import { ProductDetailComponent } from './features/product-detail/product-detail.component';
+import { RequestListComponent } from './features/request-list/request-list.component';
+import { MenuComponent } from './core/menu/menu.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ProductDetailComponent } from './features/product-detail/product-detail
     VendorListComponent,
     VendorDetailComponent,
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    RequestListComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@
     <th scope="col">Zip</th>
     <th scope="col">Phone</th>
     <th scope="col">Email</th>
-
+    <th scope="col">Actions</th>
   </tr>
   </thead>
   <tbody>
@@ -24,6 +24,7 @@
       <td>{{vendor.zip}}</td>
       <td>{{vendor.phone}}</td>
       <td>{{vendor.email}}</td>
+      <td><a routerLink="/vendor/detail/{{ vendor.id }}">Details</a></td>
     </tr>
   </tbody>
 </table>

@@ -16,7 +16,8 @@ import { ProductListComponent } from './features/product-list/product-list.compo
 import { ProductDetailComponent } from './features/product-detail/product-detail.component';
 import { RequestListComponent } from './features/request-list/request-list.component';
 import { MenuComponent } from './core/menu/menu.component';
-import { NewUserComponent } from './features/new-user/new-user.component';
+import { NewUserComponent } from './features/user-new/user-new.component';
+import { VendorNewComponent } from './features/vendor-new/vendor-new.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NewUserComponent } from './features/new-user/new-user.component';
     ProductDetailComponent,
     RequestListComponent,
     MenuComponent,
-    NewUserComponent
+    NewUserComponent,
+    VendorNewComponent
   ],
   imports: [
     BrowserModule,

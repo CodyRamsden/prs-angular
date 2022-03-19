@@ -5,9 +5,9 @@ import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
-  selector: 'app-new-user',
-  templateUrl: './new-user.component.html',
-  styleUrls: ['./new-user.component.css']
+  selector: 'app-user-new',
+  templateUrl: './user-new.component.html',
+  styleUrls: ['./user-new.component.css']
 })
 export class NewUserComponent implements OnInit {
   user: User = new User();

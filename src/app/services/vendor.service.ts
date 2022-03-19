@@ -26,12 +26,12 @@ export class VendorService {
     return this.http.get<Vendor[]>(`${this.url}/`)
   }
   //get vendor by id
-  //http://localhost:8080/users/{id}
+  //http://localhost:8080/user/{id}
   getById (id: number) : Observable<Vendor[]> {
   let requestUrl = this.url + '/' + id
   return this.http.get<Vendor[]>(requestUrl)
   }
-  //http://localhost:8080/vendors"
+  //http://localhost:8080/vendor"
   createVendor(vendor: Vendor) : Observable<Vendor[]> {
     return this.http.post<Vendor[]>(this.url,vendor)
   }

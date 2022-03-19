@@ -10,6 +10,7 @@ import { UserListComponent } from './features/user-list/user-list.component';
 import { VendorDetailComponent } from './features/vendor-detail/vendor-detail.component';
 import { VendorListComponent } from './features/vendor-list/vendor-list.component';
 import { VendorNewComponent } from './features/vendor-new/vendor-new.component';
+import { ProductNewComponent } from './features/product-new/product-new.component';
 
 const routes: Routes = [
   { path: '', component: AboutComponent },
@@ -21,12 +22,13 @@ const routes: Routes = [
   { path: 'vendor/new', component: VendorNewComponent },
   { path: 'product/list', component: ProductListComponent },
   { path: 'product/detail/:id', component: ProductDetailComponent},
+  { path: 'product/new', component: ProductNewComponent },
   { path: 'request/list', component: RequestListComponent },
   { path: '**', component: AboutComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

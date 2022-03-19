@@ -20,15 +20,19 @@ export class ProductService {
   url = environment.apiBaseUrl + productRoute
 
   //get all products
-  //http://localhost:8080/users/
+  //http://localhost:8080/product/
   getAll() : Observable<Product []> {
     let requestUrl = this.url + '/';
     return this.http.get<Product[]>(`${this.url}/`)
   }
   //get product by id
-  //http://localhost:8080/users/{id}
+  //http://localhost:8080/product/{id}
   getById (id: number) : Observable<Product[]> {
   let requestUrl = this.url + '/' + id
   return this.http.get<Product[]>(requestUrl)
+  }
+  //http://localhost:8080/product"
+  createProduct(product: Product) : Observable<Product[]> {
+    return this.http.post<Product[]>(this.url,product)
   }
 }

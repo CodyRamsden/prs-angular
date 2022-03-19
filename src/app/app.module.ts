@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './features/about/about.component';
@@ -18,6 +19,8 @@ import { RequestListComponent } from './features/request-list/request-list.compo
 import { MenuComponent } from './core/menu/menu.component';
 import { NewUserComponent } from './features/user-new/user-new.component';
 import { VendorNewComponent } from './features/vendor-new/vendor-new.component';
+import { ProductNewComponent } from './features/product-new/product-new.component';
+
 
 
 @NgModule({
@@ -33,7 +36,8 @@ import { VendorNewComponent } from './features/vendor-new/vendor-new.component';
     RequestListComponent,
     MenuComponent,
     NewUserComponent,
-    VendorNewComponent
+    VendorNewComponent,
+    ProductNewComponent
   ],
   imports: [
     BrowserModule,

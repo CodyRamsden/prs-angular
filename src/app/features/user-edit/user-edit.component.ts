@@ -32,7 +32,7 @@ export class UserEditComponent implements OnInit {
   }
   updateUser() {
     console.log(this.user.id)
-    this.userService.updateUser(this.user, this.userId) .subscribe(
+    this.userService.updateUser(this.user) .subscribe(
       data => {
         console.log(data)
         this.router.navigateByUrl('/user/list')

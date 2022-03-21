@@ -41,8 +41,8 @@ export class VendorService {
     return this.http.delete<Vendor[]>(requestUrl)
   }
   //http://localhost:8080/vendors"
-  updateVendor(vendor: Vendor, id: number) : Observable<Vendor[]> {
-    let requestUrl = this.url + '/' + id
+  updateVendor(vendor: Vendor) : Observable<Vendor[]> {
+    let requestUrl = this.url + '/' + vendor.id
     return this.http.put<Vendor[]>(requestUrl,vendor)
   }
 }

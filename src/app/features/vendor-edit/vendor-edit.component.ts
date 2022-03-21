@@ -33,7 +33,7 @@ export class VendorEditComponent implements OnInit {
 }
 updateVendor() {
   console.log(this.vendor.id)
-  this.vendorService.updateVendor(this.vendor, this.vendorId) .subscribe(
+  this.vendorService.updateVendor(this.vendor) .subscribe(
     data => {
       console.log(data)
       this.router.navigateByUrl('/vendor/list')

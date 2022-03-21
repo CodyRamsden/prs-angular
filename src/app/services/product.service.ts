@@ -40,8 +40,8 @@ export class ProductService {
     let requestUrl = this.url + '/' + id
     return this.http.delete<Product[]>(requestUrl)
   }
-  updateProduct(product: Product, id: number) : Observable<Product[]> {
-    let requestUrl = this.url + '/' + id
+  updateProduct(product: Product) : Observable<Product[]> {
+    let requestUrl = this.url + '/' + product.id
     return this.http.put<Product[]>(requestUrl,product)
   }
 }

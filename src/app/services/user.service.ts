@@ -41,8 +41,8 @@ export class UserService {
     return this.http.delete<User[]>(requestUrl)
   }
   //http://localhost:8080/users"
-  updateUser(user: User, id: number) : Observable<User[]> {
-    let requestUrl = this.url + '/' + id
+  updateUser(user: User) : Observable<User[]> {
+    let requestUrl = this.url + '/' + user.id
     return this.http.put<User[]>(requestUrl,user)
   }
 }

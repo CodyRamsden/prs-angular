@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  selector: 'app-user-edit',
+  templateUrl: './user-edit.component.html',
+  styleUrls: ['./user-edit.component.css']
 })
-export class UserDetailComponent implements OnInit {
-
+export class UserEditComponent implements OnInit {
   user: User = new User()
-  userId: number = 0
+  userId: number = 0;
 
   constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 
@@ -27,15 +27,14 @@ export class UserDetailComponent implements OnInit {
             }
             console.log(data)
           },
-          error => { console.log(error) }
-        )
-      }
-    )
+          error => { console.log(error) })
+         })
   }
-
-  deleteUser() {
-    this.userService.deleteById(this.user.id) .subscribe(
+  updateUser() {
+    console.log(this.user.id)
+    this.userService.updateUser(this.user, this.userId) .subscribe(
       data => {
+        console.log(data)
         this.router.navigateByUrl('/user/list')
       },
       error => console.log(error)

@@ -13,6 +13,7 @@ import { VendorNewComponent } from './features/vendor-new/vendor-new.component';
 import { ProductNewComponent } from './features/product-new/product-new.component';
 import { UserEditComponent } from './features/user-edit/user-edit.component';
 import { VendorEditComponent } from './features/vendor-edit/vendor-edit.component';
+import { ProductEditComponent } from './features/product-edit/product-edit.component';
 
 const routes: Routes = [
   { path: '', component: AboutComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'vendor/edit/:id', component: VendorEditComponent},
   { path: 'product/list', component: ProductListComponent },
   { path: 'product/detail/:id', component: ProductDetailComponent},
+  { path: 'product/edit/:id', component: ProductEditComponent},
   { path: 'product/new', component: ProductNewComponent },
   { path: 'request/list', component: RequestListComponent },
   { path: '**', component: AboutComponent }

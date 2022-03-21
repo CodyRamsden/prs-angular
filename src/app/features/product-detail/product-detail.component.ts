@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,7 +14,7 @@ export class ProductDetailComponent implements OnInit {
   product: Product = new Product()
   productId: number = 1
 
-  constructor(private productService: ProductService, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -21,9 +22,6 @@ export class ProductDetailComponent implements OnInit {
         this.productId = params.id
       }
     )
-
-
-
 
     this.productService.getById(this.productId).subscribe(
       data => {
@@ -34,6 +32,13 @@ export class ProductDetailComponent implements OnInit {
       },
       error => { console.log(error) }
       )
-
+    }
+    deleteProduct() {
+      this.productService.deleteById(this.product.id) .subscribe(
+        data => {
+          this.router.navigateByUrl('/product/list')
+        },
+        error => console.log(error)
+      )
     }
   }

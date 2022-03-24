@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UserEditComponent implements OnInit {
   user: User = new User()
   userId: number = 0;
+  errors: string = "";
 
   constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 

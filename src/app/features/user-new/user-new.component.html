@@ -1,19 +1,21 @@
 <form #myForm="ngForm">
-<div class="form-group row">
-  <label class="col-form-label col-sm-2"for="username">Username:</label>
-  <input type="text" id="username" name="Username" class="form-control col-sm-6"
-  required minlength="4" [(ngModel)]="user.username" #username="ngModel"
-   placeholder="Username" enabled >
-   <div *ngIf="username.invalid && (username.dirty || username.touched)"
-    class="alert">
-    <div *ngIf="username.errors?.['required']">
-      Username is required.
-    </div>
-  <div *ngIf="username.errors?.['minlength']">
-    Name must be at least 4 characters long.
-    </div>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2"for="username">Username:</label>
+    <input type="text" id="username" name="Username" class="form-control col-sm-6"
+    required minlength="4" [(ngModel)]="user.username" #username="ngModel"
+     placeholder="Username"  enabled >
   </div>
-</div>
+     <div class="form-group row" *ngIf="username.invalid && (username.dirty || username.touched)"
+      class="alert">
+      <div class="form-group row text-danger" *ngIf="username.errors?.['required']">
+        <label class="col-form-label col-sm-2"></label>
+        <div>This field is required</div>
+      </div>
+    <div class="form-group row text-danger" *ngIf="username.errors?.['minlength']">
+      <label class="col-form-label col-sm-2"></label>
+      <div>*Username must be 4 characters</div>
+      </div>
+    </div>
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="password">Password:</label>
@@ -21,47 +23,71 @@
   required minlength="8" [(ngModel)]="user.password" #password="ngModel"
    placeholder="Password" enabled >
 </div>
-<div *ngIf="password.errors?.['required']">
-  Password is required.
-</div>
-<div *ngIf="password.errors?.['minlength']">
-  Password must be at least 8 characters long.
-</div>
-
-<div class="form-group row">
-  <label class="col-form-label col-sm-2"for="firstName">First Name:</label>
-  <input type="text" id="firstName" name="FirstName" class="form-control col-sm-6"
-  required [(ngModel)]="user.firstName" #firstName="ngModel"
-   placeholder="First Name" enabled >
-   <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+   <div class="form-group row" *ngIf="password.invalid && (password.dirty || password.touched)"
     class="alert">
-    <div *ngIf="firstName.errors?.['required']">
-      First Name is required.
+    <div class="form-group row text-danger" *ngIf="password.errors?.['required']">
+      <label class="col-form-label col-sm-2"></label>
+      <div>This field is required</div>
+    </div>
+  <div class="form-group row text-danger" *ngIf="password.errors?.['minlength']">
+    <label class="col-form-label col-sm-2"></label>
+    <div>*Password must be 8 characters</div>
     </div>
   </div>
-</div>
 
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2"for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="FirstName" class="form-control col-sm-6"
+    required [(ngModel)]="user.firstName" #firstName="ngModel"
+     placeholder="First Name" enabled >
+  </div>
+     <div class="form-group row" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+      class="alert">
+      <div class="form-group row text-danger" *ngIf="firstName.errors?.['required']">
+        <label class="col-form-label col-sm-2"></label>
+        <div>This field is required</div>
+      </div>
+    </div>
 
-<div class="form-group row">
-  <label class="col-form-label col-sm-2"for="lastName">Last Name:</label>
-  <input class="form-control col-sm-6" [(ngModel)]='user.lastName'
-  type="text" name="LastName"
-  id="lastname" placeholder="Last Name" enabled >
-</div>
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2"for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="LastName" class="form-control col-sm-6"
+      required [(ngModel)]="user.lastName" #lastName="ngModel"
+       placeholder="Last Name" enabled >
+    </div>
+       <div class="form-group row" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert">
+        <div class="form-group row text-danger" *ngIf="lastName.errors?.['required']">
+          <label class="col-form-label col-sm-2"></label>
+          <div>This field is required</div>
+        </div>
+      </div>
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="phone">Phone:</label>
-  <input class="form-control col-sm-6" [(ngModel)]='user.phone'
-  type="text" name="Phone"
-  id="phone" placeholder="Phone" enabled >
+  <input type="tel" id="phone" name="Phone" class="form-control col-sm-6"
+    required [(ngModel)]="user.phone" #phone="ngModel"
+    placeholder="888 888 8888"
+    pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12" enabled >
+</div>
+<div class="form-group row" *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert">
+  <div class="form-group row text-danger" *ngIf="phone.errors?.['required']">
+    <label class="col-form-label col-sm-2"></label>
+    <div>This field is required</div>
+  </div>
 </div>
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="email">Email:</label>
-  <input class="form-control col-sm-6" [(ngModel)]='user.email'
-  type="text" name="Email"
-  id="email" placeholder="Email" enabled >
+  <input type="text" id="email" name="Email" class="form-control col-sm-6"
+  required [(ngModel)]="user.email" #email="ngModel"
+   placeholder="Email" enabled >
 </div>
+   <div class="form-group row" *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+    <div class="form-group row text-danger" *ngIf="email.errors?.['required']">
+      <label class="col-form-label col-sm-2"></label>
+      <div>This field is required</div>
+    </div>
+  </div>
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="reviewer">Is Reviewer?:</label>

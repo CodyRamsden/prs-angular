@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class ProductNewComponent implements OnInit {
   product: Product = new Product()
   vendors: Vendor[] = []
+  errors: string = "";
 
   constructor(private productService: ProductService, private vendorService: VendorService, private router: Router) {
 }

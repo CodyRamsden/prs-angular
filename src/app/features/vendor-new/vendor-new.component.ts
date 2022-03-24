@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class VendorNewComponent implements OnInit {
   vendor: Vendor = new Vendor();
+  errors: string = "";
 
   constructor(private vendorService: VendorService, private router: Router) { }
 

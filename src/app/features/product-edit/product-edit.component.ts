@@ -15,6 +15,7 @@ export class ProductEditComponent implements OnInit {
   product: Product = new Product()
   productId: number = 0;
   vendors: Vendor[] = []
+  errors: string = "";
 
   constructor(private productService: ProductService, private vendorService: VendorService, private route: ActivatedRoute, private router: Router) { }
 

@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class VendorEditComponent implements OnInit {
   vendor: Vendor = new Vendor()
   vendorId: number = 0;
+  errors: string = "";
 
   constructor(private vendorService: VendorService, private route: ActivatedRoute, private router: Router) { }
 

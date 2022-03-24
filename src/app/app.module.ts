@@ -24,6 +24,7 @@ import { ProductNewComponent } from './features/product-new/product-new.componen
 import { UserEditComponent } from './features/user-edit/user-edit.component';
 import { VendorEditComponent } from './features/vendor-edit/vendor-edit.component';
 import { ProductEditComponent } from './features/product-edit/product-edit.component';
+import { UserAuthenticateComponent } from './features/user-authenticate/user-authenticate.component';
 
 
 
@@ -44,7 +45,8 @@ import { ProductEditComponent } from './features/product-edit/product-edit.compo
     ProductNewComponent,
     UserEditComponent,
     VendorEditComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    UserAuthenticateComponent
   ],
   imports: [
     BrowserModule,

@@ -40,9 +40,15 @@ export class UserService {
     let requestUrl = this.url + '/' + id
     return this.http.delete<User[]>(requestUrl)
   }
-  //http://localhost:8080/users"
+  //http://localhost:8080/users/{id}"
   updateUser(user: User) : Observable<User[]> {
     let requestUrl = this.url + '/' + user.id
     return this.http.put<User[]>(requestUrl,user)
   }
+  //http://localhost:8080/users/authenticate
+  authenticateUser (user: User) : Observable<User[]> {
+    let requestUrl = this.url + '/authenticate'
+    return this.http.post<User[]>(requestUrl, user)
+    }
+
 }

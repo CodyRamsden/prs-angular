@@ -1,14 +1,31 @@
+<form #myForm="ngForm">
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="username">Username:</label>
-  <input class="form-control col-sm-6" [(ngModel)]='user.username' type="text" name="Username"
-  id="username" placeholder="Username" enabled >
+  <input type="text" id="username" name="Username" class="form-control col-sm-6"
+  required minlength="4" [(ngModel)]="user.username" #username="ngModel"
+   placeholder="Username" enabled >
+   <div *ngIf="username.invalid && (username.dirty || username.touched)"
+    class="alert">
+    <div *ngIf="username.errors?.['required']">
+      Name is required.
+    </div>
+  <div *ngIf="username.errors?.['minlength']">
+    Name must be at least 4 characters long.
+    </div>
+  </div>
 </div>
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="password">Password:</label>
-  <input class="form-control col-sm-6" [(ngModel)]='user.password'
-  type="password" name="Password"
-  id="password" placeholder="Password" enabled >
+  <input type="text" id="password" name="Password" class="form-control col-sm-6"
+  required minlength="8" [(ngModel)]="user.password" #password="ngModel"
+   placeholder="Password" enabled >
+   <div *ngIf="password.errors?.['required']">
+    Password is required.
+  </div>
+  <div *ngIf="password.errors?.['minlength']">
+    Password must be at least 8 characters long.
+  </div>
 </div>
 
 <div class="form-group row">
@@ -51,7 +68,9 @@
   <input class="form-control col-sm-6"[(ngModel)]='user.admin'
   type="checkbox" name="Admin"
   id="admin" placeholder="Admin" enabled>
+</div>
 
 
-<button type="button" class="btn btn-primary" (click)="createUser()">Save</button>
+<button type="button" class="btn btn-primary" [disabled]="myForm.invalid" (click)="createUser()">Save</button>
+</form>
 

@@ -3,26 +3,24 @@
   <thead>
     <tr>
     <th scope="col"></th>
-    <th scope="col">Vendor</th>
-    <th scope="col">Part Number</th>
     <th scope="col">Name</th>
+    <th scope="col">Part Number</th>
     <th scope="col">Price</th>
+    <th scope="col">Vendor</th>
     <th scope="col">Unit</th>
-    <th scope="col">Photo Path</th>
     <th scope="col">Actions</th>
   </tr>
   </thead>
   <tbody>
     <tr *ngFor="let product of products; index as i">
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{product.vendor.name}}</td>
-      <td>{{product.partNumber}}</td>
       <td>{{product.name}}</td>
-      <td>${{product.price | number:'1.2-2'}}</td>
+      <td>{{product.partNumber}}</td>
+      <td>{{product.price | currency}}</td>
+      <td>{{product.vendor.name}}</td>
       <td>{{product.unit}}</td>
-      <td>{{product.photoPath}}</td>
       <td>
-      <a routerLink="/product/detail/{{ product.id }}">Details</a>|<a routerLink="/product/list" (click)="deleteProduct(product.id)">Delete</a>
+      <a routerLink="/product/detail/{{ product.id }}">Details</a> | <a routerLink="/product/list" (click)="deleteProduct(product.id)">Delete</a>
       </td>
     </tr>
   </tbody>

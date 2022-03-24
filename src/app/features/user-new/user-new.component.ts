@@ -1,3 +1,4 @@
+import { getParseErrors } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
@@ -11,8 +12,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NewUserComponent implements OnInit {
   user: User = new User();
+  errors: string = "";
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router,) { }
 
   ngOnInit(): void {
     console.log(this.user)

@@ -32,7 +32,7 @@ export class ProductNewComponent implements OnInit {
     this.productService.createProduct(this.product) .subscribe(
       data => {
         console.log(data)
-        this.router.navigateByUrl('/vendor/list')
+        this.router.navigateByUrl('/product/list')
       },
       error => console.log(error)
     )

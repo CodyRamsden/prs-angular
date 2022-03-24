@@ -7,7 +7,7 @@
    <div *ngIf="username.invalid && (username.dirty || username.touched)"
     class="alert">
     <div *ngIf="username.errors?.['required']">
-      Name is required.
+      Username is required.
     </div>
   <div *ngIf="username.errors?.['minlength']">
     Name must be at least 4 characters long.
@@ -20,20 +20,27 @@
   <input type="text" id="password" name="Password" class="form-control col-sm-6"
   required minlength="8" [(ngModel)]="user.password" #password="ngModel"
    placeholder="Password" enabled >
-   <div *ngIf="password.errors?.['required']">
-    Password is required.
-  </div>
-  <div *ngIf="password.errors?.['minlength']">
-    Password must be at least 8 characters long.
-  </div>
+</div>
+<div *ngIf="password.errors?.['required']">
+  Password is required.
+</div>
+<div *ngIf="password.errors?.['minlength']">
+  Password must be at least 8 characters long.
 </div>
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="firstName">First Name:</label>
-  <input class="form-control col-sm-6" [(ngModel)]='user.firstName'
-  type="text" name="FirstName"
-  id="firstname" placeholder="First Name" enabled >
+  <input type="text" id="firstName" name="FirstName" class="form-control col-sm-6"
+  required [(ngModel)]="user.firstName" #firstName="ngModel"
+   placeholder="First Name" enabled >
+   <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+    class="alert">
+    <div *ngIf="firstName.errors?.['required']">
+      First Name is required.
+    </div>
+  </div>
 </div>
+
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="lastName">Last Name:</label>

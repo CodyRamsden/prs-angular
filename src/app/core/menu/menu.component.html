@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark mb-3 fixed-top">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark mb-3 ">
   <div class="container-fluid">
     <a class="navbar-brand" [routerLink]="'.'">PRS</a>
 
@@ -25,6 +25,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'/request/list'" (click)="isMenuCollapsed = true">Request</a>
+        </li>
+        <li *ngIf="user">
+          Hello, {{ user.firstName }}
         </li>
       </ul>
     </div>

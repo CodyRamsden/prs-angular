@@ -7,11 +7,11 @@
   </div>
      <div class="form-group row" *ngIf="username.invalid && (username.dirty || username.touched)"
       class="alert">
-      <div class="form-group row text-danger" *ngIf="username.errors?.['required']">
+      <div class="form-group row text-danger" style="height: 0px;" *ngIf="username.errors?.['required']">
         <label class="col-form-label col-sm-2"></label>
         <div>This field is required</div>
       </div>
-    <div class="form-group row text-danger" *ngIf="username.errors?.['minlength']">
+    <div class="form-group row text-danger" style="height: 0px;" *ngIf="username.errors?.['minlength']">
       <label class="col-form-label col-sm-2"></label>
       <div>*Username must be 4 characters</div>
       </div>
@@ -25,11 +25,11 @@
 </div>
    <div class="form-group row" *ngIf="password.invalid && (password.dirty || password.touched)"
     class="alert">
-    <div class="form-group row text-danger" *ngIf="password.errors?.['required']">
+    <div class="form-group row text-danger" style="height: 0px;" *ngIf="password.errors?.['required']">
       <label class="col-form-label col-sm-2"></label>
       <div>This field is required</div>
     </div>
-  <div class="form-group row text-danger" *ngIf="password.errors?.['minlength']">
+  <div class="form-group row text-danger" style="height: 0px;" *ngIf="password.errors?.['minlength']">
     <label class="col-form-label col-sm-2"></label>
     <div>*Password must be 8 characters</div>
     </div>
@@ -56,7 +56,7 @@
        placeholder="Last Name" enabled >
     </div>
        <div class="form-group row" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert">
-        <div class="form-group row text-danger" *ngIf="lastName.errors?.['required']">
+        <div class="form-group row text-danger" style="height: 0px;" *ngIf="lastName.errors?.['required']">
           <label class="col-form-label col-sm-2"></label>
           <div>This field is required</div>
         </div>
@@ -68,8 +68,8 @@
     required [(ngModel)]="user.phone" #phone="ngModel"
     placeholder="888 888 8888" minlength="10" maxlength="12" enabled >
 </div>
-<div class="form-group row" *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert">
-  <div class="form-group row text-danger" *ngIf="phone.errors?.['required']">
+<div class="form-group row"  *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert">
+  <div class="form-group row text-danger" style="height: 0px;" *ngIf="phone.errors?.['required']">
     <label class="col-form-label col-sm-2"></label>
     <div>This field is required</div>
   </div>
@@ -82,7 +82,7 @@
    placeholder="Email" enabled >
 </div>
    <div class="form-group row" *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
-    <div class="form-group row text-danger" *ngIf="email.errors?.['required']">
+    <div class="form-group row text-danger" style="height: 0px;" *ngIf="email.errors?.['required']">
       <label class="col-form-label col-sm-2"></label>
       <div>This field is required</div>
     </div>

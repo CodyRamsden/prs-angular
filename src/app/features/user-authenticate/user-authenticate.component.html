@@ -3,29 +3,36 @@
     <label class="col-form-label col-sm-2"for="username">Username:</label>
     <input type="text" id="username" name="Username" class="form-control col-sm-6"
     required minlength="4" [(ngModel)]="user.username" #username="ngModel"
-     placeholder="Username" enabled >
-     <div *ngIf="username.invalid && (username.dirty || username.touched)"
+     placeholder="Username"  enabled >
+  </div>
+     <div class="form-group row" *ngIf="username.invalid && (username.dirty || username.touched)"
       class="alert">
-      <div *ngIf="username.errors?.['required']">
-        Username is required.
+      <div class="form-group row text-danger" style="height: 0px;" *ngIf="username.errors?.['required']">
+        <label class="col-form-label col-sm-2"></label>
+        <div>This field is required</div>
       </div>
-    <div *ngIf="username.errors?.['minlength']">
-      Name must be at least 4 characters long.
+    <div class="form-group row text-danger" style="height: 0px;" *ngIf="username.errors?.['minlength']">
+      <label class="col-form-label col-sm-2"></label>
+      <div>*Username must be 4 characters</div>
       </div>
     </div>
-  </div>
 
-  <div class="form-group row">
-    <label class="col-form-label col-sm-2"for="password">Password:</label>
-    <input type="text" id="password" name="Password" class="form-control col-sm-6"
-    required minlength="8" [(ngModel)]="user.password" #password="ngModel"
-     placeholder="Password" enabled >
-  </div>
-  <div *ngIf="password.errors?.['required']">
-    Password is required.
-  </div>
-  <div *ngIf="password.errors?.['minlength']">
-    Password must be at least 8 characters long.
+<div class="form-group row">
+  <label class="col-form-label col-sm-2"for="password">Password:</label>
+  <input type="text" id="password" name="Password" class="form-control col-sm-6"
+  required minlength="8" [(ngModel)]="user.password" #password="ngModel"
+   placeholder="Password" enabled >
+</div>
+   <div class="form-group row" *ngIf="password.invalid && (password.dirty || password.touched)"
+    class="alert">
+    <div class="form-group row text-danger" style="height: 0px;" *ngIf="password.errors?.['required']">
+      <label class="col-form-label col-sm-2"></label>
+      <div>This field is required</div>
+    </div>
+  <div class="form-group row text-danger" style="height: 0px;" *ngIf="password.errors?.['minlength']">
+    <label class="col-form-label col-sm-2"></label>
+    <div>*Password must be 8 characters</div>
+    </div>
   </div>
 
   <button type="button" class="btn btn-primary" [disabled]="myForm.invalid" (click)="login()">Login</button>

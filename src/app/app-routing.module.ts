@@ -14,6 +14,10 @@ import { ProductNewComponent } from './features/product-new/product-new.componen
 import { UserEditComponent } from './features/user-edit/user-edit.component';
 import { VendorEditComponent } from './features/vendor-edit/vendor-edit.component';
 import { ProductEditComponent } from './features/product-edit/product-edit.component';
+import { UserAuthenticateComponent } from './features/user-authenticate/user-authenticate.component';
+import { ModalComponent } from './modal/modal.component';
+import { RequestNewComponent } from './features/request-new/request-new.component';
+import { RequestDetailComponent } from './features/request-detail/request-detail.component';
 
 const routes: Routes = [
   { path: '', component: AboutComponent },
@@ -21,6 +25,7 @@ const routes: Routes = [
   { path: 'user/detail/:id', component: UserDetailComponent },
   { path: 'user/new', component: NewUserComponent},
   { path: 'user/edit/:id', component: UserEditComponent},
+  { path: 'login', component: UserAuthenticateComponent},
   { path: 'vendor/list', component: VendorListComponent },
   { path: 'vendor/detail/:id', component: VendorDetailComponent },
   { path: 'vendor/new', component: VendorNewComponent },
@@ -30,6 +35,9 @@ const routes: Routes = [
   { path: 'product/edit/:id', component: ProductEditComponent},
   { path: 'product/new', component: ProductNewComponent },
   { path: 'request/list', component: RequestListComponent },
+  { path: 'request/detail/:id', component: RequestDetailComponent},
+  { path: 'request/new', component: RequestNewComponent },
+  { path: 'app/modal', component: ModalComponent },
   { path: '**', component: AboutComponent }
 ];
 

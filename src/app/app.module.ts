@@ -25,6 +25,9 @@ import { UserEditComponent } from './features/user-edit/user-edit.component';
 import { VendorEditComponent } from './features/vendor-edit/vendor-edit.component';
 import { ProductEditComponent } from './features/product-edit/product-edit.component';
 import { UserAuthenticateComponent } from './features/user-authenticate/user-authenticate.component';
+import { ModalComponent } from './modal/modal.component';
+import { RequestNewComponent } from './features/request-new/request-new.component';
+import { RequestDetailComponent } from './features/request-detail/request-detail.component';
 
 
 
@@ -46,7 +49,10 @@ import { UserAuthenticateComponent } from './features/user-authenticate/user-aut
     UserEditComponent,
     VendorEditComponent,
     ProductEditComponent,
-    UserAuthenticateComponent
+    UserAuthenticateComponent,
+    ModalComponent,
+    RequestNewComponent,
+    RequestDetailComponent
   ],
   imports: [
     BrowserModule,

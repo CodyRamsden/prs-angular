@@ -1,0 +1,67 @@
+<form #myForm="ngForm">
+
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2"for="user">User:</label>
+    <input type="text" id="user" name="User" class="form-control col-sm-6"
+    required minlength="4" [(ngModel)]="request.user.username" #user="ngModel"
+     placeholder="User" disabled >
+  </div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2"for="description">Description:</label>
+  <input type="text" id="description" name="Description" class="form-control col-sm-6"
+  required [(ngModel)]="request.description" #description="ngModel"
+   placeholder="Description" enabled >
+</div>
+   <div class="form-group row" *ngIf="description.invalid && (description.dirty || description.touched)"
+    class="alert">
+    <div class="form-group row text-danger" style="height: 0px;" *ngIf="description.errors?.['required']">
+      <label class="col-form-label col-sm-2"></label>
+      <div>This field is required</div>
+  </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2"for="justification">Justification:</label>
+    <input type="text" id="justification" name="Justification" class="form-control col-sm-6"
+    required [(ngModel)]="request.justification" #justification="ngModel"
+     placeholder="Justification" enabled >
+  </div>
+     <div class="form-group row" *ngIf="justification.invalid && (justification.dirty || justification.touched)"
+      class="alert">
+      <div class="form-group row text-danger" *ngIf="justification.errors?.['required']">
+        <label class="col-form-label col-sm-2"></label>
+        <div>This field is required</div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2"for="dateNeeded">Date Needed:</label>
+      <input type="date" id="dateNeeded" name="DateNeeded" class="form-control col-sm-6"
+      required [(ngModel)]="request.dateNeeded" #dateNeeded="ngModel"
+       placeholder="Date Needed" enabled >
+    </div>
+       <div class="form-group row" *ngIf="dateNeeded.invalid && (dateNeeded.dirty || dateNeeded.touched)" class="alert">
+        <div class="form-group row text-danger" style="height: 0px;" *ngIf="dateNeeded.errors?.['required']">
+          <label class="col-form-label col-sm-2"></label>
+          <div>This field is required</div>
+        </div>
+      </div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2"for="deliveryMode">Delivery Mode:</label>
+  <input type="text" id="deliveryMode" name="DeliveryMode" class="form-control col-sm-6"
+    required [(ngModel)]="request.deliveryMode" #deliveryMode="ngModel"
+    placeholder="Delivery Mode" enabled >
+</div>
+<div class="form-group row"  *ngIf="deliveryMode.invalid && (deliveryMode.dirty || deliveryMode.touched)" class="alert">
+  <div class="form-group row text-danger" style="height: 0px;" *ngIf="deliveryMode.errors?.['required']">
+    <label class="col-form-label col-sm-2"></label>
+    <div>This field is required</div>
+  </div>
+</div>
+
+
+
+<button type="button" class="btn btn-primary" [disabled]="myForm.invalid" (click)="createRequest()">Save</button>
+</form>

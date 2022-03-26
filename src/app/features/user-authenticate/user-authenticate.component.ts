@@ -21,7 +21,9 @@ export class UserAuthenticateComponent implements OnInit {
     this.userService.authenticateUser(this.user).subscribe(
       data => {
         if (data.length > 0) {
+          console.log(data)
           this.systemService.loggedInUser = data[0]
+          this.router.navigateByUrl('/user/list')
         } else {
 
         }

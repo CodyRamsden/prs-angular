@@ -9,7 +9,7 @@ export class User {
   public reviewer: boolean;
   public admin: boolean;
 
-  constructor(id: number= 0, username: string = '', password: string = '', firstName: string = '',
+  constructor(id: number= 0, username: string = 'cramsden', password: string = 'FlappyBird', firstName: string = '',
               lastName: string = '', phone: string = '', email: string = '',
               reviewer: boolean = false, admin: boolean = false ) {
     this.id = id;

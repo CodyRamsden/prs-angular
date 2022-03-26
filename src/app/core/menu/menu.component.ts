@@ -9,12 +9,16 @@ import { SystemService } from 'src/app/services/system.service';
 })
 export class MenuComponent implements OnInit {
   public isMenuCollapsed = true;
-  user: User | null = null
+  user?: User = undefined
 
   constructor(private systemService: SystemService) { }
 
   ngOnInit(): void {
-    this.user = this.systemService.loggedInUser
+    this.systemService.user$.subscribe(
+      user => {
+        this.user = user
+      },
+      error => console.log(error)
+    )
   }
-
 }

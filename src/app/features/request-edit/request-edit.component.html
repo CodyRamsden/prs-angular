@@ -1,3 +1,4 @@
+<form #myForm="ngForm">
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="user">User:</label>
   <input class="form-control col-sm-6" [(ngModel)]='request.user.username'
@@ -9,36 +10,36 @@
   <label class="col-form-label col-sm-2"for="description">Description:</label>
   <input class="form-control col-sm-6" [(ngModel)]='request.description'
   type="text" name="Description"
-  id="description" placeholder="Description" disabled >
+  id="description" placeholder="Description" enabled >
 </div>
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="submittedDate">Submitted Date:</label>
   <input class="form-control col-sm-6" [(ngModel)]='request.submittedDate'
   type="date" name="SubmittedDate"
-  id="submittedDate" placeholder="Submitted Date" disabled >
+  id="submittedDate" placeholder="Submitted Date" enabled >
 </div>
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="dateNeeded">Date Needed:</label>
   <input class="form-control col-sm-6" [(ngModel)]='request.dateNeeded'
   type="text" name="DateNeeded"
-  id="dateNeeded" placeholder="Date Needed" disabled >
+  id="dateNeeded" placeholder="Date Needed" enabled >
 </div>
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="total">Total:</label>
   <input class="form-control col-sm-6" [ngModel]='request.total | currency'
   type="text" name="Total"
-  id="total" placeholder="Total" disabled >
+  id="total" placeholder="Total" enabled >
 </div>
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="status">Status:</label>
   <input class="form-control col-sm-6" [(ngModel)]='request.status'
   type="text" name="Status"
-  id="status" placeholder="Status" disabled >
+  id="status" placeholder="Status" enabled >
 </div>
 
-<button class="btn btn-primary" routerLink="/request/edit/{{request.id}}">Edit</button>
-<button type="button" (click)="deleteRequest()"  class="btn btn-danger">Delete</button>
+<button type="button" class="btn btn-primary" [disabled]="myForm.invalid"  (click)="updateRequest()">Save</button>
+</form>

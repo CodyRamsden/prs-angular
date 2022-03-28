@@ -37,16 +37,14 @@
 
     <div class="form-group row">
       <label class="col-form-label col-sm-2"for="dateNeeded">Date Needed:</label>
-      <input type="date" id="dateNeeded" name="DateNeeded" class="form-control col-sm-6"
-      required [(ngModel)]="request.dateNeeded" #dateNeeded="ngModel"
-       placeholder="Date Needed" enabled >
+      <input
+class="form-control col-sm-6"
+type="date"
+id="dateNeeded"
+name="DateNeeded"
+required [(ngModel)]="ngbDate" ngbDatepicker #dateNeeded="ngbDatepicker" enabled >
     </div>
-       <div class="form-group row" *ngIf="dateNeeded.invalid && (dateNeeded.dirty || dateNeeded.touched)" class="alert">
-        <div class="form-group row text-danger" style="height: 0px;" *ngIf="dateNeeded.errors?.['required']">
-          <label class="col-form-label col-sm-2"></label>
-          <div>This field is required</div>
-        </div>
-      </div>
+
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="deliveryMode">Delivery Mode:</label>

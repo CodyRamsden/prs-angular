@@ -18,6 +18,7 @@ import { UserAuthenticateComponent } from './features/user-authenticate/user-aut
 import { ModalComponent } from './modal/modal.component';
 import { RequestNewComponent } from './features/request-new/request-new.component';
 import { RequestDetailComponent } from './features/request-detail/request-detail.component';
+import { RequestEditComponent } from './features/request-edit/request-edit.component';
 
 const routes: Routes = [
   { path: '', component: AboutComponent },
@@ -35,8 +36,9 @@ const routes: Routes = [
   { path: 'product/edit/:id', component: ProductEditComponent},
   { path: 'product/new', component: ProductNewComponent },
   { path: 'request/list', component: RequestListComponent },
-  { path: 'request/detail/:id', component: RequestDetailComponent},
+  { path: 'request/detail/:id', component: RequestDetailComponent },
   { path: 'request/new', component: RequestNewComponent },
+  { path: 'request/edit/:id', component: RequestEditComponent},
   { path: 'app/modal', component: ModalComponent },
   { path: '**', component: AboutComponent }
 ];

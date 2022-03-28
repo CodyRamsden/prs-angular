@@ -28,6 +28,7 @@ import { UserAuthenticateComponent } from './features/user-authenticate/user-aut
 import { ModalComponent } from './modal/modal.component';
 import { RequestNewComponent } from './features/request-new/request-new.component';
 import { RequestDetailComponent } from './features/request-detail/request-detail.component';
+import { RequestEditComponent } from './features/request-edit/request-edit.component';
 
 
 
@@ -52,7 +53,8 @@ import { RequestDetailComponent } from './features/request-detail/request-detail
     UserAuthenticateComponent,
     ModalComponent,
     RequestNewComponent,
-    RequestDetailComponent
+    RequestDetailComponent,
+    RequestEditComponent
   ],
   imports: [
     BrowserModule,

@@ -48,4 +48,9 @@ export class RequestService {
     return this.http.delete<Request[]>(requestUrl)
   }
 
+  updateRequest(request: Request) : Observable<Request[]> {
+    let requestUrl = this.url + '/' + request.id
+    return this.http.put<Request[]>(requestUrl,request)
+  }
+
 }

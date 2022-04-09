@@ -29,6 +29,10 @@ import { ModalComponent } from './modal/modal.component';
 import { RequestNewComponent } from './features/request-new/request-new.component';
 import { RequestDetailComponent } from './features/request-detail/request-detail.component';
 import { RequestEditComponent } from './features/request-edit/request-edit.component';
+import { RequestLinesComponent } from './features/request-lines/request-lines.component';
+import { LineItemNewComponent } from './features/line-item-new/line-item-new.component';
+import { LineItemEditComponent } from './features/line-item-edit/line-item-edit.component';
+import { RequestReviewComponent } from './features/request-review/request-review.component';
 
 
 
@@ -54,7 +58,11 @@ import { RequestEditComponent } from './features/request-edit/request-edit.compo
     ModalComponent,
     RequestNewComponent,
     RequestDetailComponent,
-    RequestEditComponent
+    RequestEditComponent,
+    RequestLinesComponent,
+    LineItemNewComponent,
+    LineItemEditComponent,
+    RequestReviewComponent
   ],
   imports: [
     BrowserModule,

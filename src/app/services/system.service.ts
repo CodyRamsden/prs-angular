@@ -8,7 +8,6 @@ import { User } from '../models/user.model';
 export class SystemService {
 
   loggedInUser?: User = undefined
-  user$ = of(this.loggedInUser)
 
   constructor() { }
 }

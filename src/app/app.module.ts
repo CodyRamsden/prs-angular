@@ -33,6 +33,7 @@ import { RequestLinesComponent } from './features/request-lines/request-lines.co
 import { LineItemNewComponent } from './features/line-item-new/line-item-new.component';
 import { LineItemEditComponent } from './features/line-item-edit/line-item-edit.component';
 import { RequestReviewComponent } from './features/request-review/request-review.component';
+import { RequestApproveComponent } from './features/request-approve/request-approve.component';
 
 
 
@@ -62,7 +63,8 @@ import { RequestReviewComponent } from './features/request-review/request-review
     RequestLinesComponent,
     LineItemNewComponent,
     LineItemEditComponent,
-    RequestReviewComponent
+    RequestReviewComponent,
+    RequestApproveComponent
   ],
   imports: [
     BrowserModule,

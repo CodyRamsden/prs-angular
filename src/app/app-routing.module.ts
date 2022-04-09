@@ -23,6 +23,7 @@ import { RequestLinesComponent } from './features/request-lines/request-lines.co
 import { LineItemNewComponent } from './features/line-item-new/line-item-new.component';
 import { LineItemEditComponent } from './features/line-item-edit/line-item-edit.component';
 import { RequestReviewComponent } from './features/request-review/request-review.component';
+import { RequestApproveComponent } from './features/request-approve/request-approve.component';
 
 const routes: Routes = [
   { path: '', component: AboutComponent },
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'request/new', component: RequestNewComponent },
   { path: 'request/edit/:id', component: RequestEditComponent},
   { path: 'request/review', component: RequestReviewComponent},
+  { path: 'request/approve/:id', component: RequestApproveComponent},
   { path: 'lines/new/:id', component: LineItemNewComponent },
   { path: 'lines/edit/:id', component: LineItemEditComponent },
   { path: 'app/modal', component: ModalComponent },

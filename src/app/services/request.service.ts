@@ -56,12 +56,12 @@ export class RequestService {
     let requestUrl = this.url + '/review/' + request.id
     return this.http.put<Request[]>(requestUrl,request)
   }
-  updateToApprove(request: Request) : Observable<Request[]> {
+  updateToApproved(request: Request) : Observable<Request[]> {
     let requestUrl = this.url + '/approve/' + request.id
     return this.http.put<Request[]>(requestUrl,request)
   }
   updateToRejected(request: Request) : Observable<Request[]> {
-    let requestUrl = this.url + '/rejected/' + request.id
+    let requestUrl = this.url + '/reject/' + request.id
     return this.http.put<Request[]>(requestUrl,request)
   }
   updateToReopened(request: Request) : Observable<Request[]> {

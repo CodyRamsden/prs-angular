@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Description</th>
+      <th scope="col">Justification</th>
+      <th scope="col">Total</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ request.user.lastName }}, {{request.user.firstName }}</td>
+      <td>{{ request.description }}</td>
+      <td>{{ request.justification }}</td>
+      <td>{{ request.total | currency }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lineItem of lineItems">
+      <td>{{ lineItem.product.name }} {{ lineItem.product.vendor.name }}</td>
+      <td>{{ lineItem.quantity }}</td>
+      <td>{{ lineItem.product.price * lineItem.quantity | currency }}</td>
+    </tr>
+  </tbody>
+</table>
+<form #myForm="ngForm">
+<button class="btn btn-primary" (click)="updateToApproved()" >Approve</button>
+<button class="btn btn-danger" [disabled]="myForm.invalid" (click)="updateToRejected()">Reject</button>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2"for="reasonForRejection">Reason For Rejection:</label>
+  <input type="text" id="reasonForRejection" name="ReasonForRejection" class="form-control col-sm-6"
+     [(ngModel)]="request.reasonForRejection" #reasonForRejection="ngModel"
+     placeholder="Reason" required enabled >
+</div>
+</form>

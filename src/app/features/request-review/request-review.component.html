@@ -19,7 +19,7 @@
       <td>{{ request.status }}</td>
       <td>{{ request.total | currency }}</td>
       <td>{{ request.submittedDate | date }}</td>
-      <td><a routerLink="/request/detail/{{ request.id }}">Approve/Reject</a></td>
+      <td><a routerLink="/request/approve/{{ request.id }}">Approve/Reject</a></td>
     </tr>
   </tbody>
 </table>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
+import { RequestService } from 'src/app/services/request.service';
 import { SystemService } from 'src/app/services/system.service';
 
 @Component({
@@ -9,16 +10,13 @@ import { SystemService } from 'src/app/services/system.service';
 })
 export class MenuComponent implements OnInit {
   public isMenuCollapsed = true;
+  loggedInUser: User = new User();
+
+  constructor(private systemService: SystemService, private requestService: RequestService) { }
+
   user?: User = undefined
 
-  constructor(private systemService: SystemService) { }
-
   ngOnInit(): void {
-    this.systemService.user$.subscribe(
-      user => {
-        this.user = user
-      },
-      error => console.log(error)
-    )
+    this.user = this.systemService.loggedInUser
   }
-}
+  }

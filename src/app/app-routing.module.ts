@@ -19,6 +19,10 @@ import { ModalComponent } from './modal/modal.component';
 import { RequestNewComponent } from './features/request-new/request-new.component';
 import { RequestDetailComponent } from './features/request-detail/request-detail.component';
 import { RequestEditComponent } from './features/request-edit/request-edit.component';
+import { RequestLinesComponent } from './features/request-lines/request-lines.component';
+import { LineItemNewComponent } from './features/line-item-new/line-item-new.component';
+import { LineItemEditComponent } from './features/line-item-edit/line-item-edit.component';
+import { RequestReviewComponent } from './features/request-review/request-review.component';
 
 const routes: Routes = [
   { path: '', component: AboutComponent },
@@ -37,8 +41,12 @@ const routes: Routes = [
   { path: 'product/new', component: ProductNewComponent },
   { path: 'request/list', component: RequestListComponent },
   { path: 'request/detail/:id', component: RequestDetailComponent },
+  { path: 'request/lines/:id', component: RequestLinesComponent },
   { path: 'request/new', component: RequestNewComponent },
   { path: 'request/edit/:id', component: RequestEditComponent},
+  { path: 'request/review', component: RequestReviewComponent},
+  { path: 'lines/new/:id', component: LineItemNewComponent },
+  { path: 'lines/edit/:id', component: LineItemEditComponent },
   { path: 'app/modal', component: ModalComponent },
   { path: '**', component: AboutComponent }
 ];

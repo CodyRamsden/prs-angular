@@ -8,10 +8,10 @@
     </button>
 
 
+
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item active">
-
           <a class="nav-link" [routerLink]="''" (click)="isMenuCollapsed = true">About</a>
         </li>
         <li class="nav-item">
@@ -27,10 +27,13 @@
           <a class="nav-link" [routerLink]="'/request/list'" (click)="isMenuCollapsed = true">Request</a>
         </li>
         <li class="nav-item">
+          <a *ngIf="user != undefined && user.reviewer" class="nav-link" [routerLink]="'/request/review'" (click)="isMenuCollapsed = true">Review</a>
+        </li>
+        <li *ngIf="user === undefined" class="nav-item">
           <a class="nav-link" [routerLink]="'/login'" (click)="isMenuCollapsed = true">Login</a>
         </li>
-        <li *ngIf="user">
-         Hello, {{ user.firstName }}
+        <li *ngIf="user" class="nav-item">
+        <a class="nav-link">Hello, {{ user.firstName }}</a>
         </li>
       </ul>
     </div>

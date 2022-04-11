@@ -64,8 +64,8 @@ export class RequestService {
     let requestUrl = this.url + '/reject/' + request.id
     return this.http.put<Request[]>(requestUrl,request)
   }
-  updateToReopened(request: Request) : Observable<Request[]> {
-    let requestUrl = this.url + '/reopened/' + request.id
+  updateToReopen(request: Request) : Observable<Request[]> {
+    let requestUrl = this.url + '/reopen/' + request.id
     return this.http.put<Request[]>(requestUrl,request)
   }
   getAllForReview(user: User) : Observable<Request[]> {

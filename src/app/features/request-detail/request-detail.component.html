@@ -15,8 +15,8 @@
 
 <div class="form-group row">
   <label class="col-form-label col-sm-2"for="submittedDate">Submitted Date:</label>
-  <input class="form-control col-sm-6" [(ngModel)]='request.submittedDate'
-  type="date" name="SubmittedDate"
+  <input class="form-control col-sm-6" [ngModel]='request.submittedDate | date'
+  type="text" name="SubmittedDate"
   id="submittedDate" placeholder="Submitted Date" disabled >
 </div>
 

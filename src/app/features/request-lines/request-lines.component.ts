@@ -54,7 +54,15 @@ deleteItem(id: number) {
   )
 }
 onSubmit(){
-this.requestService.updateToReview(this.request).subscribe(
+  if (this.request.total < 50) {
+    this.requestService.updateToApproved(this.request).subscribe(
+      data => {
+        this.router.navigateByUrl('/request/list')
+      },
+      error => console.log(error)
+    )
+  }
+  else this.requestService.updateToReview(this.request).subscribe(
   data => {
     this.router.navigateByUrl('/request/list')
   },

@@ -70,6 +70,16 @@ onSubmit(){
 )
 
 }
+updateToReopen() {
+  this.requestService.updateToReopen(this.request).subscribe(
+    data => {
+      this.router.navigateByUrl('/request/list')
+
+      console.log(data)
+    },
+    error => console.log(error)
+  )
+}
 
 }
 
